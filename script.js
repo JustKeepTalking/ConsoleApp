@@ -51,28 +51,34 @@ function detectPersonalLevel() {
 
 detectPersonalLevel();
 
-function showMyDB (private) {
-    if (!private) {console.log(personalMovieDB);}
+function showMyDB(priv) {
+    if (!priv) console.log(personalMovieDB);
 }
 
-function writeYourGenres() {
+// function writeYourGenres() {
     
-    let movieGenre;
+//     let movieGenre;
 
-    for (let i = 0; i < 3; i++) {
-        movieGenre = prompt("Ваш любимый жанр под номером", '');
-        if (movieGenre != null && movieGenre.trim() != '' && isNaN(parseInt(movieGenre))) {
-            personalMovieDB.genres.push(movieGenre);
-        } else {
-            alert ('Введите свой жанр!');
-            i--;
-        }
+//     for (let i = 0; i < 3; i++) {
+//         movieGenre = prompt("Ваш любимый жанр под номером", '');
+//         if (movieGenre != null && movieGenre.trim() != '' && isNaN(parseInt(movieGenre))) {
+//             personalMovieDB.genres.push(movieGenre);
+//         } else {
+//             alert ('Введите свой жанр!');
+//             i--;
+//         }
+//     }
+// }
+
+function writeYourGenres() {
+    for (let i = 1; i <=3; i++) {
+        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
     }
 }
 
 writeYourGenres();
 
-
+showMyDB(personalMovieDB.private);
 
 
 
